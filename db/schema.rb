@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_15_155404) do
+ActiveRecord::Schema.define(version: 2018_05_16_193427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "store_tags", force: :cascade do |t|
+    t.bigint "store_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_store_tags_on_store_id"
+    t.index ["tag_id"], name: "index_store_tags_on_tag_id"
+  end
 
   create_table "stores", force: :cascade do |t|
     t.string "name"
@@ -25,4 +34,12 @@ ActiveRecord::Schema.define(version: 2018_05_15_155404) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "store_tags", "stores"
+  add_foreign_key "store_tags", "tags"
 end

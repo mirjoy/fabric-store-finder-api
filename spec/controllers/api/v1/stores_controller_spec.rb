@@ -9,4 +9,13 @@ RSpec.describe Api::V1::StoresController, type: :controller do
     expect(response).to have_http_status(200)
     expect data.length == 3
   end
+
+  it "GET #show responds with JSON containing expected attributes" do
+    store = FactoryBot.create(:store)
+    get :show, params: { id: store.id }
+
+    expect(response).to have_http_status(200)
+    attrs = JSON.parse(response.body)['data']['attributes']
+    expect(attrs.keys).to include("name", "address")
+  end
 end

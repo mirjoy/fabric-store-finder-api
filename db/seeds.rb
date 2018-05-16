@@ -18,3 +18,7 @@ Store.create(
       address: "1343 Cambridge St, Cambridge, MA 02139"
     }
   ])
+
+Tag.create(description: "garments")
+Tag.create(description: "quilting")
+Tag.create(description: "knitting")
