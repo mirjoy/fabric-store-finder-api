@@ -11,18 +11,10 @@ Store.create(
   [
     {
       name: "Pintuck and Purl",
-      # address: "Made of chocolate"
-    },
-    {
-      name: "Elfriede's Fine Fabric",
-      # address: "Only for replying to mentions and DMs"
-    },
-    {
-      name: "Nido",
-      # address: "A mafia crime drama starring Berlusconi"
+      address: "69 Lafayette Road, North Hampton, NH 03862"
     },
     {
       name: "Gather Here",
-      # address: "Like Uno but involves drinking"
+      address: "1343 Cambridge St, Cambridge, MA 02139"
     }
   ])

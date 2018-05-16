@@ -16,11 +16,4 @@ RSpec.describe Store, :type => :model do
     store = Store.new(name: "The Fabric Store", address: nil)
     expect(store).to_not be_valid
   end
-
-  it "is not valid without a geopoint" do
-    store = Store.new(name: "The Fabric Store",
-                      address: "136 South La Brea Ave, Los Angeles, CA 90036",
-                      geopoint: nil)
-    expect(store).to_not be_valid
-  end
 end
